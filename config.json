@@ -1,0 +1,11 @@
+{
+    "_inherits_": ["base.json", "data.json"],
+    "output_channel": 100,
+    "words_dim": 300,
+    "clip_grad": 30000,
+    "mode": "rand",
+    "dropout": 0.5,
+	"fc_size": 512,
+	"rnn_type": "lstm",
+	"hidden_size": 150
+}

@@ -1,0 +1,10 @@
+{
+    "dataset_path": "data/sim-zh-combine",
+    "dataset_name": "sim-zh-combine",
+    "logits_path": "",
+    "vectors_file": "",
+    "vectors_dir": "",
+    "train_file": "train.tsv",
+    "dev_file": "dev.tsv",
+    "test_file": "test.tsv"
+}
