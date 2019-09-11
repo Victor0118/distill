@@ -8,6 +8,18 @@ import torch
 import torch.nn as nn
 
 
+def unwrap(model):
+    if isinstance(model, nn.DataParallel):
+        model = model.module
+    return model
+
+def save_checkpoint(model, workspace, best=False, **save_kwargs):
+    model = unwrap(model)
+    save_point = dict(state_dict=model.state_dict())
+    save_point.update(save_kwargs)
+    prefix = "best" if best else "last"
+    torch.save(save_point, os.path.join(workspace, f"{prefix}_model.pt"))
+
 def make_checkpoint_incrementer(model, workspace, best_loss=10000, save_last=False):
     best_loss = [best_loss]
     def increment(dev_loss, **save_kwargs):

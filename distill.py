@@ -174,8 +174,8 @@ def main():
                 test_acc, _ = evaluate(model, test_iter, criterion, export_eval_labels=args.export_eval_labels)
     training_pbar.close()
     dev_pbar.close()
-    print(f"Test accuracy of the best model: {test_acc:.4f}", file=sys.stderr)
-    print(test_acc)
+    #print(f"Test accuracy of the best model: {test_acc:.4f}", file=sys.stderr)
+    #print(test_acc)
 
 
 if __name__ == "__main__":
